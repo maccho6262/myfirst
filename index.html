@@ -3,188 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Programming Portfolio</title>
     <style>
-        /* CSS: 1ファイルに集約 */
+        /* 基本スタイル */
         :root {
-            --primary-color: #2d3436;
-            --accent-color: #0984e3;
-            --bg-color: #f5f6fa;
-            --text-color: #2f3640;
+            --main-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --primary-color: #2c3e50; /* 落ち着いた紺色 */
+            --accent-color: #3498db; /* プログラミングをイメージする青 */
+            --text-color: #333;
+            --code-bg: #f0f0f0;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: 'Consolas', 'Monaco', 'Courier New', 'Meiryo', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: var(--main-bg);
+            color: var(--text-color);
+            line-height: 1.8;
         }
 
+        /* ヘッダー */
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 2rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        /* ナビゲーション */
         nav {
+            background: white;
+            border-bottom: 2px solid var(--accent-color);
             position: sticky;
             top: 0;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
             display: flex;
             justify-content: center;
-            padding: 0.5rem;
+            padding: 0.8rem;
+            z-index: 100;
         }
 
         nav a {
-            margin: 0 1rem;
             text-decoration: none;
             color: var(--primary-color);
-            font-weight: bold;
             font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* メインコンテンツ */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
         }
 
         section {
-            max-width: 800px;
-            margin: 2rem auto;
+            background: var(--card-bg);
             padding: 2rem;
-            background: white;
+            margin: 2rem 0;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         h2 {
-            border-left: 5px solid var(--accent-color);
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
             color: var(--primary-color);
+            border-left: 6px solid var(--accent-color);
+            padding-left: 12px;
+            margin-bottom: 1.5rem;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .skill-item {
-            background: var(--accent-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .work-card {
-            border: 1px solid #ddd;
-            padding: 1rem;
-            margin-bottom: 1rem;
+        .tag {
+            display: inline-block;
+            background: var(--code-bg);
+            padding: 2px 8px;
             border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .work-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .work-item:last-child {
+            border-bottom: none;
+        }
+
+        /* 連絡先制限のスタイル */
+        .privacy-policy {
+            font-size: 0.8rem;
+            background: #fff4e5;
+            padding: 15px;
+            border-radius: 5px;
+            color: #666;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
+            color: #999;
             font-size: 0.8rem;
-            color: #7f8c8d;
         }
 
-        /* スマートフォン向け調整 */
+        /* スマホ対応 */
         @media (max-width: 600px) {
-            nav {
-                flex-wrap: wrap;
-            }
-            nav a {
-                margin: 0.3rem 0.5rem;
-            }
-            section {
-                margin: 1rem;
-                padding: 1.5rem;
-            }
+            header { padding: 2rem 1rem; }
+            section { padding: 1.5rem; }
+            nav a { margin: 0 8px; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Portfolio</h1>
-        <p>Welcome to my personal website</p>
+        <h1>Hello World;</h1>
+        <p>プログラミングと技術の探究</p>
     </header>
 
     <nav>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
+        <a href="#skills">Learning</a>
         <a href="#works">Works</a>
         <a href="#reflection">Reflection</a>
     </nav>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>
-            はじめまして。Web制作やデータ分析に関心を持っているクリエイターです。
-            シンプルで使いやすいものづくりを大切にしています。
-            現在は、新しい技術の習得とそれらを活用した課題解決に取り組んでいます。
-        </p>
-    </section>
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>
+                コンピュータが動く仕組みに魅了され、プログラミングを学んでいます。
+                単にコードを書くだけでなく、効率的で美しいロジックを組むことを目標に、日々試行錯誤を繰り返しています。
+            </p>
+            <div class="privacy-policy">
+                <strong>【重要】</strong> 大学の規定および個人情報保護の観点から、SNSや個人の連絡先は公開しておりません。お問い合わせは授業の掲示板等をご利用ください。
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-            <li class="skill-item">HTML5 / CSS3</li>
-            <li class="skill-item">JavaScript</li>
-            <li class="skill-item">Problem Solving</li>
-            <li class="skill-item">Logical Thinking</li>
-            <li class="skill-item">Communication</li>
-        </ul>
-    </section>
+        <section id="skills">
+            <h2>Interest & Learning</h2>
+            <div>
+                <h3>関心のある技術</h3>
+                <p>
+                    <span class="tag">Python</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">アルゴリズム</span>
+                    <span class="tag">Webフロントエンド</span>
+                </p>
+                <p>
+                    特にJavaScriptを用いたWebアプリケーションの開発に関心があります。
+                    ユーザーが直接触れる部分の挙動を、自分の手で制御できる点に面白さを感じています。
+                </p>
+            </div>
+        </section>
 
-    <section id="works">
-        <h2>Works</h2>
-        <div class="work-card">
-            <h3>プロジェクト A: 静的サイト制作</h3>
-            <p>HTMLとCSSのみを用いた、軽量で高速なポートフォリオサイトの構築。</p>
-        </div>
-        <div class="work-card">
-            <h3>プロジェクト B: 業務効率化ツール</h3>
-            <p>JavaScriptを活用し、日常の定型タスクを自動化するスクリプトの開発。</p>
-        </div>
-    </section>
+        <section id="works">
+            <h2>Works</h2>
+            <div class="work-item">
+                <h3>01. 数当てゲーム（C言語/Python）</h3>
+                <p>
+                    授業の課題で作成した基礎的なプログラムです。
+                    二分探索のアルゴリズムを取り入れることで、効率的に正解を導き出すロジックを実装しました。
+                </p>
+            </div>
+            <div class="work-item">
+                <h3>02. 静的ポートフォリオサイト</h3>
+                <p>
+                    このWebサイト自体が成果物の一つです。
+                    外部ライブラリを一切使わず、バニラなHTMLとCSSだけでレスポンシブデザインを構築する練習として制作しました。
+                </p>
+            </div>
+        </section>
 
-    <section id="reflection">
-        <h2>Reflection</h2>
-        <p>
-            今回のサイト制作を通じて、HTML/CSSの構造化の重要性を再確認しました。
-            特に、1ファイルにすべての要素をまとめる制約の中で、いかにコードの可読性を保ちつつ、
-            レスポンシブなデザインを実現するかという点に重点を置いて構築しました。
-            今後はさらにインタラクティブな要素を取り入れ、ユーザー体験を向上させていきたいと考えています。
-        </p>
-    </section>
+        <section id="reflection">
+            <h2>Reflection</h2>
+            <p>
+                プログラミングを学び始めてから、物事を論理的に順序立てて考える力が身についてきたと感じています。
+                今回のサイト制作では、CSSの設計において「どこを共通化し、どこを個別にするか」を整理するのに苦労しましたが、その分コードの再利用性について深く考えるきっかけになりました。
+                今後は、バックエンドとの連携も含めた、より高度な開発に挑戦したいです。
+            </p>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 My Portfolio</p>
+        <p>&copy; 2024 Programing Portfolio</p>
     </footer>
 
     <script>
-        // JavaScript: 1ファイルに集約
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        // スムーズスクロール
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
+                const target = document.querySelector(link.getAttribute('href'));
                 window.scrollTo({
-                    top: targetElement.offsetTop - 60,
+                    top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
             });
         });
-
-        console.log("Portfolio site loaded successfully.");
     </script>
 </body>
 </html>
